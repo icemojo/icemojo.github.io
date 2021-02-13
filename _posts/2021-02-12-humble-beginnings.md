@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Humble Beginnings
-date: 2021-02-12
+date: 2021-02-14
 topics:
 - jabberings
 --- 
