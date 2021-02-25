@@ -57,7 +57,7 @@
         </div>
         <div class="col-md-4">
           <div class="content-sidebar">
-            <h4>Explore by topics</h4>
+            {% include sidebar.html %}
           </div>
         </div>
       </div>
@@ -69,7 +69,7 @@
       <div class="row">
         <div class="col-md-12">
           <p>
-            &copy; {{ site.name }}, {{ 'now' | date: "%Y" }} &mdash; Powered by Jekyll and GitHub Pages
+            &copy; {{ site.name }}, {{ 'now' | date: "%Y" }} &mdash; Powered by <a href="https://jekyllrb.com" target="_blank">Jekyll</a> and <a href="https://pages.github.com" target="_blank">GitHub Pages</a>.
           </p>
         </div>
       </div>
