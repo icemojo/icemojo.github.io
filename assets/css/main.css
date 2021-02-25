@@ -1,6 +1,6 @@
 body {
   color: #ccc;
-  background-color: #333;
+  background-color: #2C354A;
 }
 
 @media (min-width: 1400px) {
@@ -16,8 +16,8 @@ body {
 .page-content {
   margin-top: 22px;
   margin-bottom: 64px;
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .page-footer {
@@ -29,4 +29,15 @@ body {
 .page-footer .container {
   padding-left: 24px;
   padding-right: 24px;
+}
+
+.content-inner {
+  background-color: #333A4A;
+  border-radius: 12px;
+  padding: 24px 24px 24px 24px;
+}
+
+.content-sidebar {
+  margin-left: 12px;
+  margin-right: 24px;
 }
