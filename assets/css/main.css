@@ -1,21 +1,32 @@
 body {
-    color: #ccc;
-    background-color: #333;
+  color: #ccc;
+  background-color: #333;
 }
 
 @media (min-width: 1400px) {
-    .container {
-        max-width: 1170px;
-    }
+  .container {
+    max-width: 1170px;
+  }
 }
 
-.site-content {
-    margin-top: 22px;
-    margin-bottom: 12px;
+.page-header {
+  padding: 0;
 }
 
-.site-footer {
-    display: block;
-    margin-top: 32px;
-    margin-bottom: 32px;
+.page-content {
+  margin-top: 22px;
+  margin-bottom: 64px;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.page-footer {
+  display: block;
+  margin-top: 32px;
+  margin-bottom: 28px;
+}
+
+.page-footer .container {
+  padding-left: 24px;
+  padding-right: 24px;
 }
