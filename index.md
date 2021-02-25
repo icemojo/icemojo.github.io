@@ -3,5 +3,5 @@ layout: default
 ---
 
 <div id="home">
-    <h1>Hi there!</h1>
+    <h2>Well, hello there!</h2>
 </div>

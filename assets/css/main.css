@@ -1,0 +1,21 @@
+body {
+    color: #ccc;
+    background-color: #333;
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1170px;
+    }
+}
+
+.site-content {
+    margin-top: 22px;
+    margin-bottom: 12px;
+}
+
+.site-footer {
+    display: block;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}

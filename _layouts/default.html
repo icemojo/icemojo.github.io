@@ -18,16 +18,54 @@
 </head>
 
 <body>
-    <main class="page-content" aria-label="Content">
-        <div class="wrapper">
-            {{ content }}
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">{{ site.title }}</a>
+            <button class="navbar-toggler" type="button" 
+                data-bs-toggle="collapse" data-bs-target="#main-navbar" 
+                aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="main-navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container site-content">
+        <div class="row">
+            <div class="col-md-8">
+                {{ content }}
+            </div>
+            <div class="col-md-4">
+                (Sidebar here)
+            </div>
         </div>
     </main>
+
+    <footer class="container site-footer">
+        <div class="row">
+            <div class="col-md-12">
+                <p>
+                    &copy; {{ site.name }}, {{ 'now' | date: "%Y" }} &mdash; Powered by Jekyll and GitHub Pages
+                </p>
+            </div>
+        </div>
+    </footer>
 
     {% if jekyll.environment == 'production' %}
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
     {% else %}
         <script src="/assets/js/bootstrap.bundle.min.js"></script>
     {% endif %}
+
 </body>
 </html>
