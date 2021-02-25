@@ -7,6 +7,10 @@ h1 {
   font-size: 34px;
 }
 
+h2 {
+  font-size: 26px;
+}
+
 p {
   margin-bottom: 12px;
 }
@@ -84,4 +88,25 @@ a:active {
 
 .topic-item {
   margin-bottom: 6px;
+}
+
+.post-list {
+  padding-top: 12px;
+  padding-bottom: 8px;
+}
+
+.post-item {
+  margin-top: 26px;
+}
+
+.post-blurb {
+  margin-bottom: 12px;
+}
+
+.post-topics {
+  margin-bottom: 4px;
+}
+
+.post-topic-item {
+  margin-right: 8px;
 }
