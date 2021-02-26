@@ -5,9 +5,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.data.core.title }}</title>
   <meta name="author" content="" />
-  <link rel="canonical" href="{{ site.url }}{{ page.url | replace: 'index.html','' }}" />
+  <link rel="canonical" href="{{ site.data.core.url }}{{ page.url | replace: 'index.html','' }}" />
 
   <link rel="shortcut icon" href="/favicon.png" />
   
@@ -28,7 +28,7 @@
       <div class="row">
         <nav class="navbar navbar-expand-lg navbar-dark">
           <div class="container">
-            <a class="navbar-brand" href="/">{{ site.title }}</a>
+            <a class="navbar-brand" href="/">{{ site.data.core.title }}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar"
               aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -69,7 +69,7 @@
       <div class="row">
         <div class="col-md-12">
           <p>
-            &copy; {{ site.name }}, {{ 'now' | date: "%Y" }} &mdash; Powered by <a href="https://jekyllrb.com" target="_blank">Jekyll</a> and <a href="https://pages.github.com" target="_blank">GitHub Pages</a>.
+            &copy; {{ site.data.owner.name }}, {{ 'now' | date: "%Y" }} &mdash; Powered by <a href="https://jekyllrb.com" target="_blank">Jekyll</a> and <a href="https://pages.github.com" target="_blank">GitHub Pages</a>.
           </p>
         </div>
       </div>

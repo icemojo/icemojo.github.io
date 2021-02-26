@@ -1,13 +1,2 @@
-title: Jabberin' Icemojo
-name: Ye Mon Aung
-email: yemonaung202@gmail.com
-url: "https://icemojo.github.io"
-
-social:
-  twitter: icemojo202
-  github:  icemojo
-  itchio: icemojo
-  skype: yemon21
-
 plugins:
   - jekyll-feed
