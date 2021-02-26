@@ -38,7 +38,37 @@ a:active {
 }
 
 .page-header {
+  margin-top: 14px;
   padding: 0;
+}
+
+.navbar-brand {
+  margin-right: 26px;
+  text-decoration: none;
+}
+
+.navbar-brand:active {
+  text-decoration: none;
+}
+
+@media (max-width: 992px) {
+  #main-navbar {
+    margin-top: 16px;
+  }
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover {
+  background-color: #967B3B;
+}
+
+.navbar-dark .navbar-nav .nav-link:active {
+  background-color: #968763;
 }
 
 .page-content {
@@ -109,6 +139,10 @@ a:active {
   margin-top: 6px;
 }
 
+.post-list-mock {
+  color: gray;
+}
+
 .post-item {
   margin-top: 30px;
 }
@@ -127,6 +161,8 @@ a:active {
 
 .post-topic-label {
   color: gray;
+  margin-left: 3px;
+  margin-right: 3px;
 }
 
 .topics {
