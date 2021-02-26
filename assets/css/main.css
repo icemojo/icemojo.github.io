@@ -24,11 +24,12 @@ a {
 
 a:hover {
   color: #C7982C;
+  text-decoration: none;
 }
 
 a:active {
-  color: #C7982C;
-  text-decoration: underline;
+  color: #FFE7B0;
+  text-decoration: none;
 }
 
 @media (min-width: 1400px) {
@@ -101,7 +102,7 @@ a:active {
 }
 
 .content-sidebar {
-  margin-left: 12px;
+  /* margin-left: 8px; */
   margin-right: 24px;
   margin-top: 32px;
 }
@@ -169,10 +170,27 @@ a:active {
   font-size: 120%;
 }
 
-.topics h3 {
+.topics h2, h3 {
   margin-bottom: 12px;
+  margin-left: 10px;
 }
 
 .topic-item {
-  margin-bottom: 6px;
+  padding: 6px 10px 6px 10px;
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.topic-item:hover {
+  background-color: #967B3B;
+}
+
+.topic-item:hover > a {
+  color: #E3C786;
+  text-decoration: none;
+}
+
+.topic-item:active > a {
+  color: #FFE7B0;
+  text-decoration: none;
 }
