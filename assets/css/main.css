@@ -140,12 +140,16 @@ a:active {
   margin-top: 6px;
 }
 
-.post-list-mock {
+.post-list-blurb {
   color: gray;
 }
 
+.post-list-contents {
+  margin-top: 12px;
+}
+
 .post-item {
-  margin-top: 30px;
+  margin-top: 26px;
 }
 
 .post-blurb {
