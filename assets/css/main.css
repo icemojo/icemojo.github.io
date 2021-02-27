@@ -142,7 +142,7 @@ a:active {
 
 .post-list .post-count {
   color: gray;
-  margin-left: 10px;
+  margin-left: 0;
   font-size: 24px;
 }
 
@@ -160,6 +160,10 @@ a:active {
 
 .post-item {
   margin-top: 26px;
+}
+
+.post-item .post-title {
+  font-weight: bold;
 }
 
 .post-blurb {
@@ -207,4 +211,40 @@ a:active {
 .topic-item:active > a {
   color: #FFE7B0;
   text-decoration: none;
+}
+
+.post .post-heading {
+  margin-bottom: 32px;
+}
+
+.post .post-heading .post-title {
+  font-weight: bold;
+}
+
+.post .post-body h1, h2 {
+  font-weight: normal;
+}
+
+.post .post-body h1 {
+  font-size: 28px;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.post .post-body h2 {
+  font-size: 22px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.post .post-body h3 {
+  font-size: 18px;
+  margin-top: 16px;
+  margin-left: 6px;
+}
+
+.post .post-body h4, h5, h6 {
+  font-size: 18px;
+  margin-top: 16px;
+  margin-left: 8px;
 }

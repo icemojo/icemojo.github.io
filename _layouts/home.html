@@ -8,7 +8,14 @@ layout: default
   <div class="post-list">
     {% assign posts = site.posts %}
     <h1>
-      {{ page.title }}{% if posts.size > 0 %}&nbsp;<span class="post-count">{{ posts.size }}</span>{% endif %}
+      {% if page.title %}
+      {{ page.title }}
+      {% else %}
+      Posts
+      {% endif %}
+      {% if posts.size > 0 %}
+      &nbsp;<span class="post-count">{{ posts.size }}</span>
+      {% endif %}
     </h1>
     <div class="post-list-blurb">{{ page.blurp }}</div>
     <div class="post-list-contents">{{ content }}</div>
@@ -19,7 +26,7 @@ layout: default
       {% assign date_format = site.data.core.date_format | default: "%b %-d, %Y" %}
       {% for post in posts %}
       <div class="post-item">
-        <h2>
+        <h2 class="post-title">
           <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
         </h2>
         {% if post.blurb %}
