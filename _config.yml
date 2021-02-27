@@ -1,2 +1,22 @@
+collections:
+  topics:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "topics"
+    values:
+      layout: "topic"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope: 
+      path: ""
+    values:
+      layout: "default"
+
 plugins:
   - jekyll-feed

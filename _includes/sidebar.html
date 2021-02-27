@@ -1,15 +1,9 @@
 <div class="topics">
   <h2>Explore by topics</h2>
-  <div class="topic-item">
-    <a href="#">Topic 1</a>
-  </div>
-  <div class="topic-item">
-    <a href="#">Topic 2</a>
-  </div>
-  <div class="topic-item">
-    <a href="#">Topic 3</a>
-  </div>
-  <div class="topic-item">
-    <a href="#">Topic 4</a>
+  {% for topic in site.topics %}
+    <div class="topic-item">
+      <a href="/topics/{{ topic.code }}">{{ topic.code }}</a>
+    </div>
+  {% endfor %}
   </div>
 </div>
