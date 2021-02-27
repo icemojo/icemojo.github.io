@@ -148,6 +148,10 @@ a:active {
   margin-top: 12px;
 }
 
+.post-list-empty {
+  margin-top: 24px;
+}
+
 .post-item {
   margin-top: 26px;
 }
@@ -161,7 +165,7 @@ a:active {
 }
 
 .post-topic-item {
-  margin-right: 0;
+  margin-right: 4px;
 }
 
 .post-topic-label {
