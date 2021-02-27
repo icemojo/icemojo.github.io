@@ -140,6 +140,12 @@ a:active {
   margin-top: 6px;
 }
 
+.post-list .post-count {
+  color: gray;
+  margin-left: 10px;
+  font-size: 24px;
+}
+
 .post-list-blurb {
   color: gray;
 }

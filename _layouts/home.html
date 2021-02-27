@@ -6,11 +6,12 @@ layout: default
 
 <div class="section">
   <div class="post-list">
-    <h1>{{ page.title }}</h1>
+    {% assign posts = site.posts %}
+    <h1>
+      {{ page.title }}{% if posts.size > 0 %}&nbsp;<span class="post-count">{{ posts.size }}</span>{% endif %}
+    </h1>
     <div class="post-list-blurb">{{ page.blurp }}</div>
     <div class="post-list-contents">{{ content }}</div>
-
-    {% assign posts = site.posts %}
 
     {% if posts.size == 0 %}
     <div class="post-list-empty">Nothing to see here. Bummer!</div>
