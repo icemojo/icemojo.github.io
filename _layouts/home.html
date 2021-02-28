@@ -2,7 +2,9 @@
 layout: default
 ---
 
-{% include welcome.html %}
+{% if site.data.core.show_welcome %}
+  {% include welcome.html %}
+{% endif %}
 
 <div class="section">
   <div class="post-list">
