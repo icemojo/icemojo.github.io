@@ -15,7 +15,7 @@ layout: default
         <span class="post-topic-label">&bull;</span>
         {% for topic in topics %}
         <span class="post-topic-item">
-          <a href="">{{ topic | escape }}</a>
+          <a href="/topics/{{ topic }}">{{ topic | escape }}</a>
         </span>
         {% endfor %}
       </span>

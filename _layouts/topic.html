@@ -23,7 +23,7 @@ layout: default
         </h2>
         {% if post.blurb %}
         <div class="post-blurb">
-          {{ post.blurb | escape }}
+          {{ post.blurb | markdownify }}
         </div>
         {% endif %}
         <div>
