@@ -18,7 +18,8 @@ layout: default
       {% for post in topic_posts %}
       <div class="post-item">
         <h2 class="post-title">
-          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+          {% assign post_url = post.url | relative_url %}
+          <a href="{{ post.url | replace: '.html', '' }}">{{ post.title | escape }}</a>
         </h2>
         {% if post.blurb %}
         <div class="post-blurb">
