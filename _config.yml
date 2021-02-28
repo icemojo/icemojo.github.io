@@ -17,6 +17,7 @@ defaults:
       path: ""
     values:
       layout: "default"
+      home: false
 
 plugins:
   - jekyll-feed
