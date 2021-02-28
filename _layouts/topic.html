@@ -3,41 +3,46 @@ layout: default
 --- 
 
 <div class="topic">
-  <h1>{{ page.name }}</h1>
+  <h1>{{ page.code }}</h1>
 
-  <div>
+  <div class="topic-contents">
   {{ content }}
   </div>
 
   <div>
+    {% assign date_format = site.data.core.date_format | default: "%b %-d, %Y" %}
     {% assign topic_posts = site.posts | where_exp: "post", "post.topics contains page.code" %}
-    {% for post in topic_posts %}
-    <div class="post-item">
-      <h2 class="post-title">
-        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-      </h2>
-      {% if post.blurb %}
-      <div class="post-blurb">
-        {{ post.blurb | escape }}
-      </div>
-      {% endif %}
-      <div>
-        <span class="post-date">
-          {{ post.date | date: site.data.core.date_format }}
-        </span>
-        {% assign topics = post.topics | where_exp: "topic", "topic != page.code" %}
-        {% if topics.size > 0 %}
-        <span class="post-topics">
-          <span class="post-topic-label">&bull;</span>
-          {% for topic in topics %}
-          <span class="post-topic-item">
-            <a href="/topics/{{ topic }}">{{ topic | escape }}</a>
-          </span>
-          {% endfor %}
-        </span>
+    {% if topic_posts.size == 0 %}
+    <div class="post-list-empty">Nothing to see here. Bummer!</div>
+    {% else %}
+      {% for post in topic_posts %}
+      <div class="post-item">
+        <h2 class="post-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h2>
+        {% if post.blurb %}
+        <div class="post-blurb">
+          {{ post.blurb | escape }}
+        </div>
         {% endif %}
+        <div>
+          <span class="post-date">
+            {{ post.date | date: date_format }}
+          </span>
+          {% assign topics = post.topics | where_exp: "topic", "topic != page.code" %}
+          {% if topics.size > 0 %}
+          <span class="post-topics">
+            <span class="post-topic-label">&bull;</span>
+            {% for topic in topics %}
+            <span class="post-topic-item">
+              <a href="/topics/{{ topic }}">{{ topic | escape }}</a>
+            </span>
+            {% endfor %}
+          </span>
+          {% endif %}
+        </div>
       </div>
-    </div>
-    {% endfor %}
+      {% endfor %}
+    {% endif %}
   </div>
 </div>

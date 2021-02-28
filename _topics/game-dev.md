@@ -1,6 +1,5 @@
 ---
 code: game-dev
-name: Game Dev
 ---
 
-Game development
+General game development related stuffs, with bad art works sprinkled on the side.

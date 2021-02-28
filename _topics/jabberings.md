@@ -1,4 +1,5 @@
 ---
 code: jabberings
-name: Jabberings, mutterings, blabberings...
 ---
+
+mutterings, statterings, blabberings...

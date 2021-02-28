@@ -17,7 +17,9 @@ layout: default
       &nbsp;<span class="post-count">{{ posts.size }}</span>
       {% endif %}
     </h1>
-    <div class="post-list-blurb">{{ page.blurp }}</div>
+    {% if page.blurb %}
+    <div class="post-list-blurb">{{ page.blurb | markdownify }}</div>
+    {% endif %}
     <div class="post-list-contents">{{ content }}</div>
 
     {% if posts.size == 0 %}
@@ -31,7 +33,7 @@ layout: default
         </h2>
         {% if post.blurb %}
         <div class="post-blurb">
-          {{ post.blurb | escape }}
+          {{ post.blurb | markdownify }}
         </div>
         {% endif %}
         <div>

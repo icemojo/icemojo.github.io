@@ -1,6 +1,5 @@
 ---
 code: game-jam
-name: Game Jam
 ---
 
-Game Jams
+Game Jam experiences and dev logs.

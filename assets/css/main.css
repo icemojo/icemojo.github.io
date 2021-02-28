@@ -156,6 +156,7 @@ a:active {
 
 .post-list-empty {
   margin-top: 24px;
+  font-style: italic;
 }
 
 .post-item {
@@ -247,4 +248,12 @@ a:active {
   font-size: 18px;
   margin-top: 16px;
   margin-left: 8px;
+}
+
+.topic {
+  margin-bottom: 16px;
+}
+
+.topic h1 {
+  margin-bottom: 18px;
 }
