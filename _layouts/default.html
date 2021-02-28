@@ -6,7 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>{% if page.title and page.home == false %}{{ page.title }} | {% endif %}{{ site.data.core.title }}</title>
-  <meta name="author" content="" />
+  <meta name="title" content="{{ site.data.core.title }}" />
+  <meta name="owner" content="{{ site.data.owner.name }}" />
+  <meta name="handle" content="{{ site.data.owner.handle }}" />
+  <meta name="email" content="{{ site.data.owner.email }}" />
   <link rel="canonical" href="{{ site.data.core.url }}{{ page.url | replace: 'index.html','' }}" />
 
   <link rel="shortcut icon" href="/favicon.png" />
