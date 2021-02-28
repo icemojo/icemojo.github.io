@@ -1,0 +1,54 @@
+--- 
+layout: default
+--- 
+
+<div class="topic">
+  {% assign topic_posts = site.posts | where_exp: "post", "post.topics contains page.code" %}
+  <h1>
+    {{ page.code }}
+    {% if topic_posts.size > 0 %}
+    &nbsp;<span class="post-count">{{ topic_posts.size }}</span>
+    {% endif %}
+  </h1>
+
+  <div class="topic-contents">
+  {{ content }}
+  </div>
+
+  <div>
+    {% if topic_posts.size == 0 %}
+    <div class="post-list-empty">Nothing to see here. Bummer!</div>
+    {% else %}
+      {% assign date_format = site.data.core.date_format | default: "%b %-d, %Y" %}
+      {% for post in topic_posts %}
+      <div class="post-item">
+        <h2 class="post-title">
+          {% assign post_url = post.url | relative_url %}
+          <a href="{{ post.url | replace: '.html', '' }}">{{ post.title | escape }}</a>
+        </h2>
+        {% if post.blurb %}
+        <div class="post-blurb">
+          {{ post.blurb | markdownify }}
+        </div>
+        {% endif %}
+        <div>
+          <span class="post-date">
+            {{ post.date | date: date_format }}
+          </span>
+          {% assign topics = post.topics | where_exp: "topic", "topic != page.code" %}
+          {% if topics.size > 0 %}
+          <span class="post-topics">
+            <span class="post-topic-label">&bull;</span>
+            {% for topic in topics %}
+            <span class="post-topic-item">
+              <a href="/topics/{{ topic }}">{{ topic | escape }}</a>
+            </span>
+            {% endfor %}
+          </span>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
