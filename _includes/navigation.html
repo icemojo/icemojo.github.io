@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">{{ site.data.core.title }}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navbar"
+      aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="navbar-nav">
+        {% for nav in site.data.navigation %}
+        <li class="nav-item">
+          {% assign page_url = page.url | replace: '.html', '' %}
+          <a class="nav-link {% if nav.url == page_url %}active{% endif %}" href="{{ nav.url }}" aria-current="page">
+            {{ nav.name }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
