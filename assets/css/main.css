@@ -257,3 +257,9 @@ a:active {
 .topic h1 {
   margin-bottom: 18px;
 }
+
+.topic .post-count {
+  color: gray;
+  margin-left: 0;
+  font-size: 24px;
+}

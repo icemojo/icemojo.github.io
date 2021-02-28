@@ -3,18 +3,23 @@ layout: default
 --- 
 
 <div class="topic">
-  <h1>{{ page.code }}</h1>
+  {% assign topic_posts = site.posts | where_exp: "post", "post.topics contains page.code" %}
+  <h1>
+    {{ page.code }}
+    {% if topic_posts.size > 0 %}
+    &nbsp;<span class="post-count">{{ topic_posts.size }}</span>
+    {% endif %}
+  </h1>
 
   <div class="topic-contents">
   {{ content }}
   </div>
 
   <div>
-    {% assign date_format = site.data.core.date_format | default: "%b %-d, %Y" %}
-    {% assign topic_posts = site.posts | where_exp: "post", "post.topics contains page.code" %}
     {% if topic_posts.size == 0 %}
     <div class="post-list-empty">Nothing to see here. Bummer!</div>
     {% else %}
+      {% assign date_format = site.data.core.date_format | default: "%b %-d, %Y" %}
       {% for post in topic_posts %}
       <div class="post-item">
         <h2 class="post-title">
