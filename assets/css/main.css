@@ -38,6 +38,18 @@ a:active {
   }
 }
 
+@media (max-width: 414px) {
+  .container {
+    max-width: 380px;
+  }
+}
+
+@media (max-width: 376px) {
+  .container {
+    max-width: 340px;
+  }
+}
+
 .page-header {
   margin-top: 14px;
   padding: 0;
