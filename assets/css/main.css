@@ -32,6 +32,17 @@ a:active {
   text-decoration: none;
 }
 
+img {
+  width: 100%;
+  margin-top: 8px;
+}
+
+figcaption {
+  text-align: center;
+  color: gray;
+  margin-bottom: 14px;
+}
+
 @media (min-width: 1400px) {
   .container {
     max-width: 1170px;
