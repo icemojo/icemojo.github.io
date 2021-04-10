@@ -26,3 +26,27 @@ After I wrapped up the tutorial game, I was so hyped with what I've learned, I i
 
 BUT... rather than simply demoralized and abandoned the game starightaway (like I ALSO definitely don't usually do), I kept working on it. So, this article or rather, this dev log series, is mostly about my experience working on a little bit longer form project than usual, lessons learned and maybe talk about some of the design decisions I made along the way. And since I've already got almost 60 hours of work under my belt, I figured this is a good time as any to pause for a moment and reflect a little bit. 
 
+So, here goes. 
+
+![](/assets/img/broughlike-intro-01-after-sixty-hours.png)
+<figcaption>Current progress after 60 hours of iterative works</figcaption>
+
+Even though I'm using the tutorial game as a starting point, I didn't actually reuse its code base at all. Instead, I've started everything from scratch in Unity (aside from upscaling the sprites I've already drawn while working on the tutorial of course). I came very, very close towards building my own engine using a framework like MonoGame or something similar as a baseline, because basic functionalities like the map generation, movement, entity relations and hierarchy are that simple and specific enough to not warrant a reliance on any of those shiny features available in modern game engines. If you can draw a 2D sprite and move things around on the screen relatively easy, then you're pretty much good to go. But for now, let's just say that learning how to design interesting mechanics is my primary goal for this project. 
+
+## The map, movement and basic actions
+
+Just like any other video game in existence, the moment to moment gameplay loop of moving the player around and, sometimes, attacking the enemies is the most important part in Broughlikes (or even Roguelike games in general). There's often a dilemma on whether killing monsters should be an integral part of the game, but I'm not actually quite experienced enough to discuss about it yet. 
+
+The map generation is pretty much what you can expect from a game with simple two dimensional grids. There's a pre-defined chance on spawning solid/wall tiles on the map while it's being generated, and apply a [flood filling algorithm](https://en.wikipedia.org/wiki/Flood_fill) to the resulting grid to make sure there's no isolated, walled off areas. It's the size of the map where I faced the first hurdle with. The tutorial game was 7x7 with 1 extra tile for the boundary walls, which is just too big in my opinion. If the player was spawned on one corner of the map and the exit/goal is on the other corner, it takes forever to travel across the map without any enemies on the way. After spending some time tweaking the size and trying out a few wall spawning percentages, I ended up with 8x6 grid plus some additional space on the right for the HUD to fit everything nicely into a 16:9 screen ratio. Removing the boundary wall made everything so much cleaner too. It still kinda feel big from time to time, but for now, I'm just gonna roll with it.
+
+Movement and actions are very much similar to what you can normally see in Broughlike games. Every movable entity moves tile by tile, and attack actions are carried out with the same inputs as the movement. So, if an enemy is blocking your path, you move into their tile to attack them, and they'll retaliate if they can, basically resulting in a brawl of endurance. The basic attacks in the tutorial game has this stunning effect on the enemies, which is absurdly powerful. In other words, if you can kite the enemies into a corner or a narrow corridor, you can essentialy wipe out the entire map with the strongest of all enemies without losing any health. It would take a lot more work and content to balance out that simple behavior, so it has to go.
+
+But I do like the idea of stun debuffs potentially being applied by a spell or an item later on, so when I was implementing the monsters interactions, I did add an ability to apply stun effects. It's just that there's currently nothing triggering to stun the monsters in any way. Without that stun effect on the basic attacks, you as a player are now more calculative with your actions. You can't mindlessly move into a tile close to an enemy without making sure that you can win the fight, or have a way to get out of it. That little simple mechanic is the basis of all Broughlike games. 
+
+## Money and monsters
+
+
+## Leveling up and leveling down
+
+
+## Spell system
