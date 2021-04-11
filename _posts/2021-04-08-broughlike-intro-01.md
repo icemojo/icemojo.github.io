@@ -41,10 +41,27 @@ The map generation is pretty much what you can expect from a game with simple tw
 
 Movement and actions are very much similar to what you can normally see in Broughlike games. Every movable entity moves tile by tile, and attack actions are carried out with the same inputs as the movement. So, if an enemy is blocking your path, you move into their tile to attack them, and they'll retaliate if they can, basically resulting in a brawl of endurance. The basic attacks in the tutorial game has this stunning effect on the enemies, which is absurdly powerful. In other words, if you can kite the enemies into a corner or a narrow corridor, you can essentialy wipe out the entire map with the strongest of all enemies without losing any health. It would take a lot more work and content to balance out that simple behavior, so it has to go.
 
-But I do like the idea of stun debuffs potentially being applied by a spell or an item later on, so when I was implementing the monsters interactions, I did add an ability to apply stun effects. It's just that there's currently nothing triggering to stun the monsters in any way. Without that stun effect on the basic attacks, you as a player are now more calculative with your actions. You can't mindlessly move into a tile close to an enemy without making sure that you can win the fight, or have a way to get out of it. That little simple mechanic is the basis of all Broughlike games. 
+But I do like the idea of stun debuffs potentially being applied by a spell or an item later on, so when I was implementing the monsters interactions, I did add an ability to apply stun effects. It's just that there's currently nothing triggering to stun the monsters in any way. Without that stun effect on the basic attacks, you as a player are now more calculative with your actions. You can't mindlessly move into a tile close to an enemy without making sure that you can win the fight, or have a way to get out of it. That little simple mechanic is the basis of all Broughlike games. (A side object-orientation note here; when I say 'monster' at any given point in time, I'm referring to the parent class of both the player and the enemy entities since they both share a lot of properties and behaviors.)
 
 ## Money and monsters
 
+It's actually quite easy to spawn a number of shiny objects onto the game world, write a simple collision event handling code for the player and you've got a collectable system straightaway. The more challenging part is to figure out the actual purpose, the goal, the motivation of letting the player collect those shiny objects, rather than simply displaying an arbitrary amount of high score. 
+
+Initially, I kinda cheaped out a little bit and made the level exit stairs to be enabled only when the player collected all the gems on the map. That apparently gave the game a stealth feel instead of a tactical dungeon crawler, because you're actively trying to avoid the enemies, focusing on getting all the gems and going down the stairs. In my own defence, I haven't actually figured out a proper loop for the enemies yet so there were no rewards for killing the enemies at this point in time. I immediately ripped it out and decided to turn the gems into a form of currency for casting the spells (like mana in standard RPGs).
+
+<p style="text-align:center;">
+<img src="/assets/img/broughlike-intro-01-shinies.png" style="width:60%;" />
+<figcaption>Ohhh...... shinies!</figcaption>
+</p>
+
+Speaking of the enemies, there are also no proper distinctions between different enemy types at the moment too. They're currently just different sprites with different number of health points. Nothing more. There are three enemy types so far, and if the map were to randomly spawn a number of enemies after it's generated, it can't just entirely be random. It'd definitely be unfair for the player to face a Screaming Block enemy (the one with 6hp on the left) straight out of the bat on level 1. The randomness for the spawning system needs to be controlled and the difficulty needs to be smoothly spread out across a curve.
+
+<p style="text-align:center;">
+<img src="/assets/img/broughlike-intro-01-trapped.png" style="width:60%;" />
+<figcaption>Trapped? ...or not!</figcaption>
+</p>
+
+The first instinct for someone would be to simply use a series of increasing or decreasing exponential values to control which enemies to spawn more or less at any given point in time. I've done it a couple of times before in the past, and the main problem with it was, the higher level the game goes the more difficult it is to predict where the game is on the difficulty curve without a giant spreadsheet opened on the side. Plus, expanding or adding more content to the system, like more enemy types, or adjusting the spawn rates for individual enemy types, is horribly painful. Instead, I came up with a nice little system that strikes a good balance between procedural and hand-made definitions. 
 
 ## Leveling up and leveling down
 
