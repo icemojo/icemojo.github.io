@@ -63,6 +63,30 @@ Speaking of the enemies, there are also no proper distinctions between different
 
 The first instinct for someone would be to simply use a series of increasing or decreasing exponential values to control which enemies to spawn more or less at any given point in time. I've done it a couple of times before in the past, and the main problem with it was, the higher level the game goes the more difficult it is to predict where the game is on the difficulty curve without a giant spreadsheet opened on the side. Plus, expanding or adding more content to the system, like more enemy types, or adjusting the spawn rates for individual enemy types, is horribly painful. Instead, I came up with a nice little system that strikes a good balance between procedural and hand-made definitions. 
 
+### Weighted spawning pools 
+
+The Map object holds a reference to a series of spawn setting asset files (Unity scriptable objects) which contain a set of configurations for a pre-defined range of levels. In addition to the other dials, the prefab references and the 'Weight' values are the only two things I need to define for the individual elements under the 'Monster Pool' collection. After that I just need to hit the calculate button at the bottom, and the asset will automatically spread out the individual element percentage values between floating point 0 and 1. The Map's enemy spawning code can then use this to identify what needs to be spawned depending on a simple 0.0-1.0 randomized throw plus whatever level the player is currently in. 
+
+![](/assets/img/broughlike-intro-01-weighted-spawning-pool-annotated.png)
+<figcaption>An example weighted spawn setting between level 1 and 6</figcaption>
+
+The example numbers shown in the screenshot might be a bit confusing at a glance. Just note that the 'Weight' value is a lot more flexible than a pre-defined percentage and you, as a designer, can use whatever value that makes sense for you. For instance, if you have 2 elements in the pool and you assign the weights of 3 and 1 each, then the percentages will be identified as 0.75 and 0.25 individually. And they'll be spread out as 0-0.75 and 0.76-1.0 respectively in the percentage ranges. On the other hand, if you only have one monster in the pool, whatever number you assign in the weight doesn't matter anymore because it'll be calculated as 100% spawning chance. 
+
+This makes the spawning code WAY cleaner than I originally hoped for, because there is zero magic numbers hardcoded aside from the 0.0-1.0 randomization. Most of the grunt work was already done in the setting files. All it has to make sure is to cast the randomized floating point number into two decimal places in order to avoid weird precision problems that can always be seen in most modern programming language. 
+
+This system does have a few downsides obviously. The biggest one being;
+
+- You can't miss a single level in any of the level ranges. You can see from the screenshot that the game currently has settings from level 1 to 18 at the moment. And if you accidently miss a level in any of those settings probably due to a small typo (let's say continuing from 8 onwards in the second setting instead of 7), then the enemy spawning code will just use the max setting of level 18 for level 7 because there is no definition for level 7. That is part of the edge case handling to make sure that the difficulty curve will simply becomes flat once there aren't any settings available for higher levels anymore. 
+
+<p style="text-align:center;">
+<img src="/assets/img/broughlike-intro-01-difficulty-curve.png" style="width:60%;">
+<figcaption>Look at those currrvvvvves...........</figcaption>
+</p>
+
+- The map spawning code and the spawn setting files are not quite independent from each other even though there's zero need for hardcoded numbers. For instance, the setting definition works on the assumption that the whatever code it's being used from, they'll work under the range of 0.0 and 1.0 when identifying the percentage. Nothing a few code refactorings can't solve, but it's worth mentioning as well. 
+
+The system is far from perfect of course, and I don't know if it's the right answer even for similar situations. But, it's working nicely for this game at the moment with a lot of flexibility for expansion, so I'm quite happy with it. If I re-read this post in two or three years down the line, I may or may not see this solution as childish. But hey... that's one of the important things about dev logs, isn't it? Track your own progression over time. 
+
 ## Leveling up and leveling down
 
 
