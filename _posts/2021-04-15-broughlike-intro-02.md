@@ -86,3 +86,17 @@ I mentioned above that there isn't any special characteristics to each individua
 </p>
 
 ## Spell system
+
+You can probably see now that all the elements we have so far are now serving as a good foundation for a proper game loop. 
+
+- Kill enemies => gain xp => acquire random spells => kill more enemies (or) survive longer 
+- Collect gems => cast spells => kill more enemies (or) survive longer 
+- Survive longer => descend more into the dungeon => get higher score 
+
+Not the most innovative in the video game industry, but it works fine. 
+
+One of the most common elements in Broughlike games (or maybe even turn based games in general) is the *wait* command. There will not be a dedicated wait command (or a spell) in any form, because it's already embedded within the spell system itself. In other words, casting a spell will cost you a turn and you can tactically use this to bring the enemies into more favorable positions if you play smart. That brings me to the topic of assigning the gem costs for the spell. 
+
+Now that each individual spells are doing at least two things, the cost would be slightly higher than it should normally be. The **Heal** spell will heal the player with 1 hp and lets you wait for a turn, so it costs **2 gems**. The **Blink** spell will teleport the player to a random unoccupied tile on the map, and lets you wait for a turn, but it only costs **1**, which means the value of the Blink spell is non-existent. Because of it's random nature, it's actually a bit of a gamble to blink out of a tight situation. You might get lucky, or you might get trapped and ended up close to an enemy with only 1 hp left. 
+
+The third spell, **Cannibalize** was a little bit more complex to implement. 
