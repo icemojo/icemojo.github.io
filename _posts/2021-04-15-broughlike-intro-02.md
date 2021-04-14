@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Broughlikes intro part 2 - The game
-date: 2021-04-14
+date: 2021-04-14 00:00:00 +0630
 topics:
 - game-dev
 - dev-log
@@ -70,9 +70,19 @@ This system does have a few downsides obviously. The biggest one being;
 
 - The map spawning code and the spawn setting files are not quite independent from each other even though there's zero need for hardcoded numbers. For instance, the setting definition works on the assumption that the whatever code it's being used from, they'll work under the range of 0.0 and 1.0 when identifying the percentage. Nothing a few code refactorings can't solve, but it's worth mentioning as well. 
 
-The system is far from perfect of course, and I don't know if it's the right answer even for similar situations. But, it's working nicely for this game at the moment with a lot of flexibility for expansion, so I'm quite happy with it. If I re-read this post in two or three years down the line, I may or may not see this solution as childish. But hey... that's one of the important things about dev logs, isn't it? Track your own progression over time. 
+The system is far from perfect of course, and I don't know if it's the right answer even for similar situations. But, it's working nicely for this game at the moment with a lot of flexibility for expansion, so I'm quite happy with it. If I re-read this post in two or three years down the line, I may or may not see this solution as childish. But hey... that's one of the important things about dev logs, isn't it? Track your own journey of progression over time. 
 
-## Leveling up and leveling down
+## Leveling down and leveling up
 
+With the difficulty curve established, there's nothing much to write home about advancing down into the dungeon level by level, floor by floor. The current plan is to use the number of floors/levels the player were able to reach in a single game session as a form of high score. That's about it. There's one slight problem with this plan though. The player can potentially ignore everything else the game has to offer (the combat, collectable gems and the spells) and focus on just getting down as much as they can. I don't really know how to deal with it yet to be honest. One idea is to block off the progression every few levels or so, probably with a boss or something, but I don't really know how it's gonna feel. Plus, I don't have enough interesting regular enemies yet to even start thinking about bosses, so consider this a free cheat code for high score chasers. 
+
+The player will get healed 1 health point when going down a level though. That's mainly to subtly encourage the player (with a small reward) that it's ok to just simply move on if they weren't able to kill every single enemy or collect every gem in a level if they're not quite healthy enough. 
+
+I mentioned above that there isn't any special characteristics to each individual enemies at the moment. But they'll grant the player some experience points (specifically, 1) when they're killed. When the player's accumulated enough experience points, a random spell will be unlocked in the hotbar, and the amount of points they'll need to reach the next level (gain another spell) will be increased slightly. You know... just a standard but simplified RPG leveling mechanism. 
+
+<p style="text-align:center;">
+<img src="/assets/img/broughlike-intro-02-experience.png" style="width:60%;">
+<figcaption>With experience, comes wisdom.</figcaption>
+</p>
 
 ## Spell system
