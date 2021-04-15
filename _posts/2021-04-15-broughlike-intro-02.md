@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Broughlikes intro part 2 - The game
-date: 2021-04-14 00:00:00 +0630
+date: 2021-04-15 00:00:00 +0630
 topics:
 - game-dev
 - dev-log
@@ -103,3 +103,7 @@ The third spell, **Cannibalize** took a little bit more work to design. It costs
 </p>
 
 So I changed the Cannibalize to *a temporary damage boost* which lasts only for 1 turn. In other words, if you've just cast the spell while standing on a corpse, you better use it straightaway. This makes it a lot more interesting than giving health points to the player. Because, in a map with two regular enemies spawned, if you've managed to kill the first enemy, you can make a quick work of the second one with the Cannibalize damage boost. But you'll have to time it and position yourself quite right not to waste it. 
+
+# Halfway through the journey 
+
+Like I've mentioned in the first post, I've already got about sixty hours of work into this project so far and I'm having a lot of  fun with it. So I'm gonna keep working on it until I hit a hundred hours mark (and maybe even a little bit more) before wrapping up the project. This soft target is essentially there to prevent me from scope creeping and also giving myself a permission to stop working on the project once I've passed that target hours.
