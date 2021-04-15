@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="850"
+   height="480"
+   viewBox="0 0 224.89582 127"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="difficulty-curve.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="303.43009"
+     inkscape:cy="276.73677"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     units="px"
+     width="1122.5197px"
+     inkscape:window-width="1304"
+     inkscape:window-height="745"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:1;fill:#e0e0e0;stroke:none;stroke-width:1.0919;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:4.3676, 4.36760000000000037;stroke-dashoffset:0;stroke-opacity:1;fill-opacity:1"
+       id="rect859"
+       width="179.91666"
+       height="92.604164"
+       x="11.262956"
+       y="5.8799295"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96"
+       inkscape:export-filename="D:\icemojo.github.io\assets\img\broughlike-intro-01-difficulty-curve.png" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.421927;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 36.544108,29.218811 v 65.8495"
+       id="path833" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.421927;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 29.937848,82.282004 H 150.34229"
+       id="path835" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.47955px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16199"
+       x="152.84001"
+       y="84.213554"
+       id="text839"><tspan
+         sodipodi:role="line"
+         id="tspan837"
+         x="152.84001"
+         y="84.213554"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.16199">levels</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.47955px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16199"
+       x="17.070019"
+       y="16.705278"
+       id="text843"><tspan
+         sodipodi:role="line"
+         id="tspan841"
+         x="17.070019"
+         y="16.705278"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.16199">spawning </tspan><tspan
+         sodipodi:role="line"
+         x="17.070019"
+         y="25.0466"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.16199"
+         id="tspan855">difficulty</tspan></text>
+    <path
+       style="fill:none;stroke:#ca3f21;stroke-width:0.63289;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 36.689015,82.266494 C 62.758061,69.684037 66.911125,50.963715 85.370416,40.490891 91.171906,38.155226 142.93329,38.381257 142.93329,38.381257"
+       id="path845"
+       sodipodi:nodetypes="ccc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.0184px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.12546"
+       x="32.032753"
+       y="87.427368"
+       id="text849"><tspan
+         sodipodi:role="line"
+         id="tspan847"
+         x="32.032753"
+         y="87.427368"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.12546">1</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:5.0184px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.12546"
+       x="82.964897"
+       y="87.427368"
+       id="text853"><tspan
+         sodipodi:role="line"
+         id="tspan851"
+         x="82.964897"
+         y="87.427368"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Fira Code';-inkscape-font-specification:'Fira Code';stroke-width:0.12546">18</tspan></text>
+    <path
+       style="fill:none;stroke:#e32121;stroke-width:0.421926;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:1.68771, 1.68771;stroke-dashoffset:0;stroke-opacity:1"
+       d="M 85.370425,40.490893 V 82.382189"
+       id="path857" />
+  </g>
+</svg>
