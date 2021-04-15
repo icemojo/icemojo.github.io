@@ -106,4 +106,8 @@ So I changed the Cannibalize to *a temporary damage boost* which lasts only for 
 
 # Halfway through the journey 
 
-Like I've mentioned in the first post, I've already got about sixty hours of work into this project so far and I'm having a lot of  fun with it. So I'm gonna keep working on it until I hit a hundred hours mark (and maybe even a little bit more) before wrapping up the project. This soft target is essentially there to prevent me from scope creeping and also giving myself a permission to stop working on the project once I've passed that target hours.
+Like I've mentioned in [the first post][post01], I've already got about sixty hours of work into this project so far and I'm having a lot of  fun with it. So I'm gonna keep working on it until I hit a hundred hours mark (and maybe even a little bit more) before wrapping up the project. This soft target is essentially there to prevent me from scope creeping and also giving myself a permission to stop working on the project once I've passed that target hours.
+
+So, I'll see you again in a few weeks. 
+
+[post01]: /2021/04/10/broughlike-intro-01

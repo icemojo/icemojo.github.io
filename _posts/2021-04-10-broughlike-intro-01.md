@@ -7,6 +7,8 @@ topics:
 - dev-log
 ---
 
+>*A short disclaimer before you start reading;* after writing out most of the things I want to talk about working on this project, this post becomes so long and incredibly boring just to even look at. So I split it into two parts with some introductory stuffs in here, and a more detailed design deep dives in [the second post][post02]. So, you can skip ahead if you don't really care about the back stories.
+
 About a month ago, I stumbled upon [this nice little tutorial series](https://nluqo.github.io/broughlike-tutorial/), which plays on a very niche sub-genre of the Roguelike games called "Broughlikes". For those of you who don't know what "Roguelike" means, I'll trust your ability to Google stuffs in order to respect the time of those who do. But if you're not really into Roguelike games at all, I suppose this article will mostly just bore you. 
 
 So, the term Broughlike was named after an indie developer, Michael Brough, who created a series of charming, weird games like [Imbroglio](https://apps.apple.com/nz/app/imbroglio/id969264934) and [868-Hack](https://apps.apple.com/us/app/868-hack/id635749911). Imbroglio has actually been one of my favorite and longest standing game on my phone ever since I saw [this Gamasutra article](https://www.gamasutra.com/view/news/273314/Freedom_through_constraints_The_design_of_Michael_Broughs_Imbroglio.php) a few years ago. Back then, even though I was immediately hooked with the game after I bought it, I only took it as a small Roguelike game with interesting puzzle elements. Nothing more. That is, of courese, until I discovered the tutorial series mentioned above. 
@@ -26,9 +28,11 @@ After I wrapped up the tutorial game, I was so hyped with what I've learned, I i
 
 BUT... rather than simply demoralized and abandoned the game starightaway (like I ALSO definitely don't usually do), I kept working on it. So, this article or rather, this dev log series, is mostly about my experience working on a little bit longer form project than usual, lessons learned and maybe talk about some of the design decisions I made along the way. And since I've already got almost 60 hours of work under my belt, I figured this is a good time as any to pause for a moment and reflect a little bit. 
 
-So, here goes. 
-
 ![](/assets/img/broughlike-intro-01-after-sixty-hours.png)
-<figcaption>Current progress after 60 hours of iterative works</figcaption>
+<figcaption>Current progress so far</figcaption>
 
 Even though I'm using the tutorial game as a starting point, I didn't actually reuse its code base at all. Instead, I've started everything from scratch in Unity (aside from upscaling the sprites I've already drawn while working on the tutorial of course). I came very, very close towards building my own engine using a framework like MonoGame or something similar as a baseline, because basic functionalities like the map generation, movement, entity relations and hierarchy are that simple and specific enough to not warrant a reliance on any of those shiny features available in modern game engines. If you can draw a 2D sprite and move things around on the screen relatively easy, then you're pretty much good to go. But for now, let's just say that learning how to design interesting mechanics is my primary goal for this project. 
+
+So, [here goes][post02].
+
+[post02]: /2021/04/15/broughlike-intro-02
