@@ -32,6 +32,27 @@ a:active {
   text-decoration: none;
 }
 
+img {
+  width: 100%;
+  margin-top: 8px;
+}
+
+figcaption {
+  text-align: center;
+  color: gray;
+  margin-bottom: 14px;
+}
+
+blockquote {
+  background-color: #485268;
+  border-radius: 4px;
+  padding: 12px;
+}
+
+blockquote p {
+  margin-bottom: 0px;
+}
+
 @media (min-width: 1400px) {
   .container {
     max-width: 1170px;
@@ -253,13 +274,13 @@ a:active {
 .post .post-body h3 {
   font-size: 18px;
   margin-top: 16px;
-  margin-left: 6px;
+  margin-left: 0px;
 }
 
 .post .post-body h4, h5, h6 {
   font-size: 18px;
   margin-top: 16px;
-  margin-left: 8px;
+  margin-left: 6px;
 }
 
 .topic {
