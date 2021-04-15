@@ -2,4 +2,4 @@
 code: game-jam
 ---
 
-Game Jam experiences and dev logs.
+Game Jam experiences and postmortems. 
