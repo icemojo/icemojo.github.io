@@ -7,6 +7,8 @@ topics:
 - dev-log
 ---
 
+>This post is also available [on my itch.io project page][post01-itch].
+
 >*A short disclaimer before you start reading;* after writing out most of the things I want to talk about working on this project, this post becomes so long and incredibly boring just to even look at. So I split it into two parts with some introductory stuffs in here, and a more detailed design deep dives in [the second post][post02]. So, you can skip ahead if you don't really care about the back stories.
 
 About a month ago, I stumbled upon [this nice little tutorial series](https://nluqo.github.io/broughlike-tutorial/), which plays on a very niche sub-genre of the Roguelike games called "Broughlikes". For those of you who don't know what "Roguelike" means, I'll trust your ability to Google stuffs in order to respect the time of those who do. But if you're not really into Roguelike games at all, I suppose this article will mostly just bore you. 
@@ -36,3 +38,4 @@ Even though I'm using the tutorial game as a starting point, I didn't actually r
 So, [here goes][post02].
 
 [post02]: /2021/04/15/broughlike-intro-02
+[post01-itch]: https://icemojo.itch.io/7drl2021/devlog/242916/broughlikes-intro-part-1-the-discovery

@@ -7,6 +7,8 @@ topics:
 - dev-log
 --- 
 
+>This post is also available [on my itch.io project page][post02-itch].
+
 # The map, movement and basic actions
 
 Just like any other video game in existence, the moment to moment gameplay loop of moving the player around and, sometimes, attacking the enemies is the most important part in Broughlikes (or even Roguelike games in general). There's often a dilemma on whether killing monsters should be an integral part of the game, but I'm not actually quite experienced enough to discuss about it yet. 
@@ -111,3 +113,4 @@ Like I've mentioned in [the first post][post01], I've already got about sixty ho
 So, I'll see you again in a few weeks. 
 
 [post01]: /2021/04/10/broughlike-intro-01
+[post02-itch]: https://icemojo.itch.io/7drl2021/devlog/242923/broughlikes-intro-part-2-the-game
