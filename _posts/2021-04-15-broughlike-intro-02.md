@@ -57,20 +57,16 @@ The Map object holds a reference to a series of spawn setting asset files (Unity
 
 The example numbers shown in the screenshot might be a bit confusing at a glance. Just note that the 'Weight' value is a lot more flexible than a pre-defined percentage and you, as a designer, can use whatever value that makes sense for you. For instance, if you have 2 elements in the pool and you assign the weights of 3 and 1 each, then the percentages will be identified as 0.75 and 0.25 individually. And they'll be spread out as 0-0.75 and 0.76-1.0 respectively in the percentage ranges. On the other hand, if you only have one monster in the pool, whatever number you assign in the weight doesn't matter anymore because it'll be calculated as 100% spawning chance. 
 
-This makes the spawning code WAY cleaner than I originally hoped for, because there is zero magic numbers hardcoded aside from the 0.0-1.0 randomization. Most of the grunt work was already done in the setting files. All it has to make sure is to cast the randomized floating point number into two decimal places in order to avoid weird precision problems that can always be seen in most modern programming language. 
+This makes the spawning code WAY cleaner than I originally hoped for, because there is zero magic numbers hardcoded aside from the 0.0-1.0 randomization. Most of the grunt work was already done in the setting files. All it has to make sure is to cast the randomized floating point number into two decimal places in order to avoid weird precision problems that can always be seen in most modern programming languages. 
 
-This system does have a few downsides obviously. The biggest one being;
-
-- You can't miss a single level in any of the level ranges. You can see from the screenshot that the game currently has settings from level 1 to 18 at the moment. And if you accidently miss a level in any of those settings probably due to a small typo (let's say continuing from 8 onwards in the second setting instead of 7), then the enemy spawning code will just use the max setting of level 18 for level 7 because there is no definition for level 7. That is part of the edge case handling to make sure that the difficulty curve will simply becomes flat once there aren't any settings available for higher levels anymore. 
+This system does have one biggest downside. You can't miss a single level in any of the level ranges when modifying the spawn setting files. You can see from the screenshot that the game currently has settings from level 1 to 18 at the moment. And if you accidently miss a level in any of those settings probably due to a small typo (let's say continuing from 8 onwards in the second setting instead of 7), then the enemy spawning code will just use the max setting of level 18 for level 7 because there is no definition for level 7. That is part of the edge case handling to make sure that the difficulty curve will simply becomes flat once there aren't any settings available for higher levels anymore. 
 
 <p style="text-align:center;">
 <img src="/assets/img/broughlike-intro-02-difficulty-curve.png" style="width:60%;">
 <figcaption>Look at those currrvvvvves...........</figcaption>
 </p>
 
-- The map spawning code and the spawn setting files are not quite independent from each other even though there's zero need for hardcoded numbers. For instance, the setting definition works on the assumption that the whatever code it's being used from, they'll work under the range of 0.0 and 1.0 when identifying the percentage. Nothing a few code refactorings can't solve, but it's worth mentioning as well. 
-
-The system is far from perfect of course, and I don't know if it's the right answer even for similar situations. But, it's working nicely for this game at the moment with a lot of flexibility for expansion, so I'm quite happy with it. If I re-read this post in two or three years down the line, I may or may not see this solution as childish. But hey... that's one of the important things about dev logs, isn't it? Track your own journey of progression over time. 
+The system is far from perfect of course, and I don't know if it's the right answer even for similar situations. There aren't any big drawbacks that can't be fixed with a little bit of refactoring. Plus, it's working nicely for this game at the moment with a lot of flexibility for expansion, so I'm quite happy with it. If I re-read this post in two or three years down the line, I may or may not see this solution as childish. But hey... that's one of the important things about dev logs, isn't it? Track your own journey of progression over time. 
 
 ## Leveling down and leveling up
 
@@ -99,4 +95,11 @@ One of the most common elements in Broughlike games (or maybe even turn based ga
 
 Now that each individual spells are doing at least two things, the cost would be slightly higher than it should normally be. The **Heal** spell will heal the player with 1 hp and lets you wait for a turn, so it costs **2 gems**. The **Blink** spell will teleport the player to a random unoccupied tile on the map, and lets you wait for a turn, but it only costs **1**, which means the value of the Blink spell is non-existent. Because of it's random nature, it's actually a bit of a gamble to blink out of a tight situation. You might get lucky, or you might get trapped and ended up close to an enemy with only 1 hp left. 
 
-The third spell, **Cannibalize** was a little bit more complex to implement. 
+The third spell, **Cannibalize** took a little bit more work to design. It costs **2 gems** but it has a special requirement to be presented on the map to cast; *corpses*. Corpses (or as it is currently being rendered in the game, *blood puddles*) were originally just asthetics that mark the spot where a monster died. Then, when I started working on the spell system, I figured I could do something with them. Initially, I started out as healing the player when they cast the spell while standing on a corpse. And since multiple corpses can stack on one tile (if multiple enemies died on the same spot) the healing effect increases based on the number of corpses on that tile. With a few play tests, it was immediately apparent that the spell doesn't feel interesting at all, and also obviously redundant with **Heal**, which has the same cost but can be cast anywhere on the map. 
+
+<p style="text-align:center;">
+<img src="/assets/img/broughlike-intro-02-cannibalize-record02.gif" style="width:60%;">
+<figcaption>Take THAT!</figcaption>
+</p>
+
+So I changed the Cannibalize to *a temporary damage boost* which lasts only for 1 turn. In other words, if you've just cast the spell while standing on a corpse, you better use it straightaway. This makes it a lot more interesting than giving health points to the player. Because, in a map with two regular enemies spawned, if you've managed to kill the first enemy, you can make a quick work of the second one with the Cannibalize damage boost. But you'll have to time it and position yourself quite right not to waste it. 
