@@ -32,9 +32,20 @@ I thought about adjusting the gem cost a little bit. But you can probably get on
 
 # Leap spell
 
-Now, here comes the primary focus of this post, and also one of the reasons why very little progress was made during this couple of months. I wanted to include a spell which allows the player to target a walkable/passable tile, jump onto it and damages all surrounding enemies upon landing there. Quoting Diablo again, I have to acknowledge that I'm closely imitating one of the Barbarian's skills with the same name of course. Also, in a game where moment to moment actions are more focused rather than fast movements, adding a spell which can traverse a long distance can sound a bit contradictory. But, I still wanted to add it just for the fun of it and see how it goes. Besides, I've never done a parabolic arc movement in games before so it'll be a good learning opportunity for me as well. Cause, how hard could it be, right? 
+Now, here comes the primary focus of this post, and also one of the reasons why very little progress was made during this past couple of months. I wanted to include a spell which allows the player to target a walkable/passable tile, jump onto it and damages all surrounding enemies upon landing there. There's an emphasis on *jump* here by the way. Quoting Diablo again, I have to acknowledge that I'm closely imitating one of the Barbarian's skills with the similar name of course. I can simply lerp (linear interpolate) the player from one position to another and call it a jump. But, no no no! I've already done it with Blink. That's not what I want for Leap. 
+
+![Diablo Leap attack](/assets/img/broughlike-intro-03-diablo-leap-attack.jpg)
+<figcaption>Diablo 2 Barbarian's Leap Attack -- a classic move</figcaption>
+
+In a game where moment to moment actions are more focused rather than fast movements, adding a spell which can allow you to traverse a long distance can sound a bit contradictory. Consider it as a form of top tier/ultimate ability, where you're moving and damaging enemies at the same time. Whichever the case, I just wanted to implement it and see how it feels in the game.
+
+Besides, I've never done a parabolic arc movement in games before and I've always wanted to do it some form or another. So, it'll be a good learning opportunity for me as well. I mean, Angry Birds has this, most of the RTS and tower defense games have this, pretty much all the games which have a form of archery have this. How hard could this be, right? 
 
 Well, spoiler alert! It's VERY hard. 
+
+![Example games with arc traversal](/assets/img/broughlike-intro-03-arc-examples.png)
+<figcaption>From left to right, top to bottom; Angry Birds, Tank Wars, Tower Fall, Legends of Kingdom Rush</figcaption>
+
 
 
 [broughlike-intro-part-02]: /2021/04/15/broughlike-intro-02
