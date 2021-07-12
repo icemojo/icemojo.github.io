@@ -46,7 +46,38 @@ Well, spoiler alert! It's VERY hard.
 ![Example games with arc traversal](/assets/img/broughlike-intro-03-arc-examples.png)
 <figcaption>From left to right, top to bottom; Angry Birds, Tank Wars, Tower Fall, Legends of Kingdom Rush</figcaption>
 
+Naturally, I started researching the basic physics principles behind it, like [projectile motion](https://en.wikipedia.org/wiki/Projectile_motion) and [kinematic equations](https://en.wikipedia.org/wiki/Equations_of_motion). Most of the theories didn't make much sense to me without a proper context to apply them. I mean, I think I understand them, but most of the time, I just feel like I'm not smart enough to implement them on my own. So I did what most modern laymans would do, turn to YouTube and forums for direct guidance on how to properly implement parabolic projectile motion in games. There's obviously no shortage of resources to consume of course. [Sebastian Lague's videos on kinematic equations](https://www.youtube.com/playlist?list=PLFt_AvWsXl0eMryeweK7gc9T04lJCIg_W) are pretty good. [This guy made a small game](https://www.youtube.com/watch?v=7ZYkCOmF0yc) about artic foxes with pouncing (jumping) as a main mechanic. There are tons of tutorials, explanations and code examples from realistically shooting an arrow to predicting the trajectory of a projectile. Even so, most of them didn't found to be useful for me either. 
 
+One of the main thing I wasn't really satisfied with most of these tutorials was, they either rely too much on a specific game engine and its physics components without explaning very much about the math behind it, or just straightaway showcase the working code that implemented the proper motion equations and give no explanation at all. Most of them were like; "if you want to shoot a projectile, apply some initial velocity to it like this and let physics engine take care of the rest." or "if you want to find out where the projectile would land after applying a certain velocity in a certain angle, plug in those formula and you're good to go." I even found a video which literally explained and coded just like another video. The most common theme is of course to treat the object in motion as a projectile (a cannon ball, a rocket, an arrow, or whatever), which means they focus on calculating the initial velocity and angle of the object and have very little control once it's in motion. That's not exactly what I wanted either. 
+
+Then I slowly realized that there *are* actually different ways to implement the parabolic arc motion. They're all based on one basic displacement formula. But, depending on what you want to achieve, you're gonna have to think about which values to use as inputs and how to derive the unknown values into independent x and y components. 
+
+<p style="text-align:center;">
+<img src="/assets/img/broughlike-intro-03-displacement.jpg" style="width:50%;" />
+<figcaption>The good ol' displacement formula we've never paid attention to on tenth grade</figcaption>
+</p>
+
+So, I stepped back a little bit and think about what I want the object (rather, the player) to behave when jumping from one position to another in the game. 
+
+- I know the start and end positions of the object very well. 
+- I want to control the angle of the trajectory, which of course should be higher up from the target position. Otherwise, it'll just be shooting in a straight line. 
+
+Depending on these two, I want to calculate various *displacement values* of the object across the traversal arc over time, so that;
+
+1. I'll be able to render the full trajectory arc line properly in order to give visual feedback of how the object is going to move, 
+1. and control the movement of the object across the arc at any given point in time just by sampling one of those same displacement values. 
+
+![traversal arc concept](/assets/img/broughlike-intro-03-traversal-arc-concept.jpg)
+<figcaption>The objective is not to throw an object to a target, but to control the entire traversal movement over the parabolic arc</figcaption>
+
+I know it's a lot of rambling and much of it won't make sense without additional explanations with proper mathematical formula. I still don't fully understand much of it even after I've managed to make it work. All I want to say is that it's not just about throwing an object from one point to another. And you should always lay out concrete intentions, either as a designer or a programmer, and do a thorough research before diving into futher implementation details. 
+
+So after about 18 hours of various prototype iterations over a couple of weeks, here's what I got. I'm not gonna go through all of my prototypes here just to save your sanity. But I do want to note that [this video by Gingerageous Games](https://www.youtube.com/watch?v=F47dmKpAIW0) brought me closest to what I wanted to achieve. 
+
+![traversal arc implemented](/assets/img/broughlike-intro-03-traversal-arc-implemented.gif)
+<figcaption>Smooth jazz moves</figcaption>
+
+Yes, as you can probably guess, control over the movement is a big part of my requirement. Notice the displacement values array in the Inspector is re-evaluated in real time? All I have to do to move the object across the arc is to lerp between those coordinates. It doesn't matter whether it's moving forward or backward. And the same array is used for both movement and rendering the trajectory line as well.
 
 [broughlike-intro-part-02]: /2021/04/15/broughlike-intro-02
 [post-03-itch]: /
