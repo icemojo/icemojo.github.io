@@ -1,13 +1,15 @@
 ---
 layout: post
 title: Broughlikes intro part 3 - The leap
-date: 2021-07-09
+date: 2021-07-13 17:40 +0630
 topics: 
 - game-dev
 - dev-log
 --- 
 
-It's been a while since I've last talked about this project, so much so that people might assume I've already abandoned it. Quite contrary actually, I'm still very much knee deep into development. The game was supposed to be wrapped up within fourty more hours or so after the [last post][broughlike-intro-part-02], which is essentially about two weeks of work. The reason why that's not happening yet is a lot of things have been going on in my life and I couldn't get much dev hours as I would've wanted. Important life event, failed game jams and difficult job hunting experiences occupied my time a lot over the last two months. Now that I've just wrapped up one of the big features a couple of days ago, I figured it's as good as time as any to check in before I proceed. 
+>This post should be referred (or) redirected from [my itch.io project page][post-03-itch].
+
+It's been a while since I've last talked about this project, so much so that people might assume I've already abandoned it. Quite contrary actually, I'm still very much knee deep into development. The game was supposed to be wrapped up within forty more hours or so after the [last post][broughlike-intro-part-02], which is essentially about two weeks of work. The reason why that's not happening yet is a lot of things have been going on in my life and I couldn't get much dev hours as I would've wanted. Important life event, failed game jams and difficult job hunting experiences occupied my time a lot over the last two months. Now that I've just wrapped up one of the big features a couple of days ago, I figured it's as good as time as any to check in before I proceed. 
 
 So, first of all...
 
@@ -17,7 +19,7 @@ So, first of all...
 
 Yup, the entire color scheme of the dungeon has been changed into a darker tone. The main reason was, well, it's supposed to be a dungeon filled with scary monsters and shifting floors. The previous yellowy color scheme just feels like you're strolling through an ancient, faraway, desert temple. Which works fine by itself, but the vibe I wanted to go for is quite similar to Diablo 1 or 2, where you just couldn't know what dangers or riches await on every descent. 
 
-Plus, the player is now a green viking dude holding an axe, which will probably never get used physically in the entire game. The previous blue alien-like guy with a pot belly is now revamped into an enemy monster with it's own special ability. We'll talk more about him in a minute, but for now, let's dive into the new spells. 
+Plus, the player is now a green Viking dude holding an axe, which will probably never get used physically in the entire game. The previous blue alien-like guy with a pot belly is now revamped into an enemy monster with it's own special ability. We'll talk more about him in a minute, but for now, let's dive into the new spells. 
 
 # Nova spell
 
@@ -48,9 +50,9 @@ Well, spoiler alert! It's VERY hard.
 
 ## A bit of background story 
 
-Naturally, I started researching the basic physics principles behind it, like [projectile motion](https://en.wikipedia.org/wiki/Projectile_motion) and [kinematic equations](https://en.wikipedia.org/wiki/Equations_of_motion). Most of the theories didn't make much sense to me without a proper context to apply them. I mean, I think I understand them, but most of the time, I just feel like I'm not smart enough to implement them on my own. So I did what most modern laymans would do, turn to YouTube and forums for direct guidance on how to properly implement parabolic projectile motion in games. There's obviously no shortage of resources to consume of course. [Sebastian Lague's videos on kinematic equations](https://www.youtube.com/playlist?list=PLFt_AvWsXl0eMryeweK7gc9T04lJCIg_W) are pretty good. (I'm a constant follower of his work.) [This guy made a small game](https://www.youtube.com/watch?v=7ZYkCOmF0yc) about artic foxes with pouncing (jumping) as a main mechanic. There are tons of tutorials, explanations and code examples from realistically shooting an arrow to predicting the trajectory of a projectile. Even so, most of them didn't found to be useful for me either. 
+Naturally, I started researching the basic physics principles behind it, like [projectile motion](https://en.wikipedia.org/wiki/Projectile_motion) and [kinematic equations](https://en.wikipedia.org/wiki/Equations_of_motion). Most of the theories didn't make much sense to me without a proper context to apply them. I mean, I think I understand them, but most of the time, I just feel like I'm not smart enough to implement them on my own. So I did what most modern laymen would do, turn to YouTube and forums for direct guidance on how to properly implement parabolic projectile motion in games. There's obviously no shortage of resources to consume of course. [Sebastian Lague's videos on kinematic equations](https://www.youtube.com/playlist?list=PLFt_AvWsXl0eMryeweK7gc9T04lJCIg_W) are pretty good. (I'm a constant follower of his work.) [This guy made a small game](https://www.youtube.com/watch?v=7ZYkCOmF0yc) about artic foxes with pouncing (jumping) as a main mechanic. There are tons of tutorials, explanations and code examples from realistically shooting an arrow to predicting the trajectory of a projectile. Even so, most of them didn't found to be useful for me either. 
 
-One of the main thing I wasn't really satisfied with most of these tutorials (not all of them, but most) was, they either rely too much on a specific game engine and its physics components without explaning very much about the math behind it, or just straightaway showcase the working code that implemented the proper motion equations and give no explanation at all. Most of them were like; "if you want to shoot a projectile, apply some initial velocity to it like this and let physics engine take care of the rest." or "if you want to find out where the projectile would land after applying a certain velocity in a certain angle, plug in those formula and you're good to go." I even found a video which literally explained and coded just like another video. The most common theme is of course to treat the object in motion as a projectile (a cannon ball, a rocket, an arrow, or whatever), which means they focus on calculating the initial velocity and angle of the object and have very little control once it's in motion. That's not exactly what I wanted either. 
+One of the main thing I wasn't really satisfied with most of these tutorials (not all of them, but most) was, they either rely too much on a specific game engine and its physics components without explaining very much about the math behind it, or just straightaway showcase the working code that implemented the proper motion equations and give no explanation at all. Most of them were like; "if you want to shoot a projectile, apply some initial velocity to it like this and let physics engine take care of the rest." or "if you want to find out where the projectile would land after applying a certain velocity in a certain angle, plug in those formula and you're good to go." I even found a video which literally explained and coded just like another video. The most common theme is of course to treat the object in motion as a projectile (a cannon ball, a rocket, an arrow, or whatever), which means they focus on calculating the initial velocity and angle of the object and have very little control once it's in motion. That's not exactly what I wanted either. 
 
 Then I slowly realized that there *are* actually different ways to implement the parabolic arc motion. They're all based on one basic displacement formula. But, depending on what you want to achieve, you're gonna have to think about which values to use as inputs and how to derive the unknown values into independent x and y components. 
 
@@ -74,7 +76,7 @@ These sound trivial. But what I wanted to do depending on these inputs is to cal
 ![traversal arc concept](/assets/img/broughlike-intro-03-traversal-arc-concept.jpg)
 <figcaption>The objective is not to throw an object to a target, but to control the entire traversal movement over the parabolic arc</figcaption>
 
- I know it's a lot of rambling and much of it won't make sense without additional explanations with proper mathematical formula. I still don't fully understand much of it even after I've managed to make it work. I hope that references you've found in this article would give you a good runway when you're trying to attempt your own implemenation. All I want to say is that it's not just about throwing an object from one point to another. And you should try to lay out concrete intentions, either as a designer or a programmer, and do a thorough research before diving into futher implementation details. 
+ I know it's a lot of rambling and much of it won't make sense without additional explanations with proper mathematical formula. I still don't fully understand much of it even after I've managed to make it work. I hope that references you've found in this article would give you a good runway when you're trying to attempt your own implementation. All I want to say is that it's not just about throwing an object from one point to another. And you should try to lay out concrete intentions, either as a designer or a programmer, and do a thorough research before diving into further implementation details. 
 
 So after about 18 hours of various prototype iterations over a couple of weeks, here's what I got. I'm not gonna go through all of my prototypes here just to save your sanity. But I do want to note that [this video by Gingerageous Games](https://www.youtube.com/watch?v=F47dmKpAIW0) brought me closest to what I wanted to achieve. 
 
@@ -124,4 +126,4 @@ The next post is obviously gonna be the last, so stay tuned.
 
 
 [broughlike-intro-part-02]: /2021/04/15/broughlike-intro-02
-[post-03-itch]: /
+[post-03-itch]: https://icemojo.itch.io/7drl2021/devlog/273423/broughlikes-intro-part-3-the-leap
