@@ -23,7 +23,7 @@ Plus, the player is now a green viking dude holding an axe, which will probably 
 
 I've been thinking about adding a range offensive spell of some sort for a while. Creating a spell which shoots out a projectile in one cardinal direction is easy to implement for sure. But at the same time, I don't really want to undermine the main mechanic of the game, which is getting close to the enemies in order to bring them down while considering about your positioning on the map every single turn. As a balancing act, I can make that projectile spell expensive to cast in order to discourage the player from using it frequently. But, that would probably make the game feel punishing just to do such a simple thing you can always see everywhere else. 
 
-![It's Nova time](/assets/img/broughlike-intro-03-nova.gif)
+![It's Nova time](/assets/img/broughlike-intro-03-the-nova.gif)
 <figcaption>It's Nova time</figcaption>
 
 So, the solution becomes the beams (or waves) of energy that radiate outwards into all four cardinal directions of the player. It costs 3 gems to cast, won't go through the walls and hit everything in the straight lines with 1 damage. With enough gems in your pocket, you as the player can still lay waste to multiple smaller enemies if you can position yourself quite right. But you're still vulnerable to incoming attacks if they can get close enough to you since casting the spell advances the turn. 
@@ -82,6 +82,17 @@ Yes, as you can probably guess, control over the movement is a big part of my re
 The final solution is far from perfect, and there were a few kinks I had to additionally work out when putting everything together in the game. But it works well enough, and also allows me to design everything in a nice modular way so that the same exact logic could be easily reused aside from the Leap spell. 
 
 Let's time jump a dozen more dev hours and check out how it turned out.
+
+![the leap](/assets/img/broughlike-intro-03-the-leap.gif)
+<figcaption>Leaping in and out of actions</figcaption>
+
+I have to say that the spell looks kinda cool in action. Just wanna note down a couple of things here. 
+
+A keyboard controlled *reticle pointer* is used for targeting the spell. Other than the fact that it took several hours just to make the reticle work as smooth as it is, I'm not gonna dive deeper into it anymore. (This article is already lenghty as it is.) Though you might be wondering why I chose keyboard to control the reticle instead of the mouse on a PC game. It might be so much easier and precise to control the spell, right? 
+
+Well, yes, it might. The thing is, there's no other mechanic or feature in the game that requires mouse input. The movement is controlled by keyboard, the spells hotbar has numerical bindings in each slot, action confirmation is with space bar. Even the menu navigation will be through keyboard. So it'll be quite jarring for the player to reach out to the mouse just to cast this single spell. Trust me, I know it is. Because I've seen a few jam games done this, and it really throws me off guard. 
+
+The spell costs 5 gems and deals 1 damage to surrounding enemies upon landing at the target tile. You can reach anywhere on the entire map with it. The only limitation is directly onto the walls or the enemies. It really feels like it has a good offensive and utility purposes, doesn't it. The high cost would, hopefully, prevent the player from overusing it. 
 
 
 
