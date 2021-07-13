@@ -46,6 +46,8 @@ Well, spoiler alert! It's VERY hard.
 ![Example games with arc traversal](/assets/img/broughlike-intro-03-arc-examples.png)
 <figcaption>From left to right, top to bottom; Angry Birds, Tank Wars, Tower Fall, Legends of Kingdom Rush</figcaption>
 
+## A bit of background story 
+
 Naturally, I started researching the basic physics principles behind it, like [projectile motion](https://en.wikipedia.org/wiki/Projectile_motion) and [kinematic equations](https://en.wikipedia.org/wiki/Equations_of_motion). Most of the theories didn't make much sense to me without a proper context to apply them. I mean, I think I understand them, but most of the time, I just feel like I'm not smart enough to implement them on my own. So I did what most modern laymans would do, turn to YouTube and forums for direct guidance on how to properly implement parabolic projectile motion in games. There's obviously no shortage of resources to consume of course. [Sebastian Lague's videos on kinematic equations](https://www.youtube.com/playlist?list=PLFt_AvWsXl0eMryeweK7gc9T04lJCIg_W) are pretty good. (I'm a constant follower of his work.) [This guy made a small game](https://www.youtube.com/watch?v=7ZYkCOmF0yc) about artic foxes with pouncing (jumping) as a main mechanic. There are tons of tutorials, explanations and code examples from realistically shooting an arrow to predicting the trajectory of a projectile. Even so, most of them didn't found to be useful for me either. 
 
 One of the main thing I wasn't really satisfied with most of these tutorials (not all of them, but most) was, they either rely too much on a specific game engine and its physics components without explaning very much about the math behind it, or just straightaway showcase the working code that implemented the proper motion equations and give no explanation at all. Most of them were like; "if you want to shoot a projectile, apply some initial velocity to it like this and let physics engine take care of the rest." or "if you want to find out where the projectile would land after applying a certain velocity in a certain angle, plug in those formula and you're good to go." I even found a video which literally explained and coded just like another video. The most common theme is of course to treat the object in motion as a projectile (a cannon ball, a rocket, an arrow, or whatever), which means they focus on calculating the initial velocity and angle of the object and have very little control once it's in motion. That's not exactly what I wanted either. 
@@ -56,6 +58,8 @@ Then I slowly realized that there *are* actually different ways to implement the
 <img src="/assets/img/broughlike-intro-03-displacement.jpg" style="width:50%;" />
 <figcaption>The good ol' displacement formula we've never paid attention to in high school</figcaption>
 </p>
+
+# The design process
 
 So, I stepped back a little bit and think about what I want the object (rather, the player) to behave, and also allows me to control different aspects of the entire traversal movement. 
 
@@ -92,8 +96,31 @@ A keyboard controlled *reticle pointer* is used for targeting the spell. Other t
 
 Well, yes, it might. The thing is, there's no other mechanic or feature in the game that requires mouse input. The movement is controlled by keyboard, the spells hotbar has numerical bindings in each slot, action confirmation is with space bar. Even the menu navigation will be through keyboard. So it'll be quite jarring for the player to reach out to the mouse just to cast this single spell. Trust me, I know it is. Because I've seen a few jam games done this, and it really throws me off guard. 
 
-The spell costs 5 gems and deals 1 damage to surrounding enemies upon landing at the target tile. You can reach anywhere on the entire map with it. The only limitation is directly onto the walls or the enemies. It really feels like it has a good offensive and utility purposes, doesn't it. The high cost would, hopefully, prevent the player from overusing it. 
+The spell costs 5 gems and deals 1 damage to surrounding enemies upon landing at the target tile. You can reach anywhere on the entire map with it. The only limitation is directly onto the walls or the enemies. It really feels like it has a good offensive and utility purposes, doesn't it. The high cost would, hopefully, prevents the player from overusing it. 
 
+# Alien enemy 
+
+Remember this blue guy with beady eyes and a pot belly. Well, he used to be a player controlled character, and now he's an enemy. 
+
+<p style="text-align:center;">
+<img src="/assets/img/broughlike-intro-02-shinies.png" alt="alien guy" style="width:34%;">
+<figcaption>Calling him Alien for no special reason</figcaption>
+</p>
+
+And he's also gonna be the first of the enemy monsters to have a specialized behavior. All the enemies in the game, except for the red ants, will have a special behavior attached to them to make them unique in their own way. Since he looks like an alien with two eyes poking out of his body, I'm thinking about giving him some sort of weird, replication behavior. In other words, he'll be split into two smaller creatures of the same kind, with fewer health points, when he dies. 
+
+![replicating alien](/assets/img/broughlike-intro-03-replicating-alien.gif)
+<figcaption>Die, you alien scu...... wait WHAT?!</figcaption>
+
+If you didn't notice from the footage, the same parabolic trajectory logic is reused when the Younglings (the smaller aliens with 1 health) are spawned. They may not look very threatening by themselves individually, but since they still behave like all the other enemies and deal 1 damage, a couple of Aliens can easily explode into a large number and ruin your day if you're not careful. 
+
+# Conclusion
+
+I think it's a good point to leave things here for now. The actual number of updates within this couple of months are quite few, but I'd say they're all relatively big, and give me a lot of solid ground works for future games as well. 
+
+There are still a number of smaller updates, refinements and balancing works as well. But I don't think they have any interesting backstories to deserve your attention. I mentioned before that I'm gonna work on this project for a full hundered hours. Well, I'm already at 90 hours mark and I still have a whole bunch of things to do, so I guess I'm gonna have to be very efficient for the rest of the journey. But it's totally fine to overshoot for about ten hours or so as well. The important thing is to finish something presentable and learned a boatload of lessons along the way. 
+
+The next post is obviously gonna be the last, so stay tuned. 
 
 
 [broughlike-intro-part-02]: /2021/04/15/broughlike-intro-02
