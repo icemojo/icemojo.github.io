@@ -7,7 +7,7 @@ topics:
 - dev-log
 ---
 
->This post should be referred (or) redirected from [my itch.io project page]().
+>This post should be referred (or) redirected from [my itch.io project page](https://icemojo.itch.io/dungeon-brawler/devlog/283662/broughlikes-intro-part-4-the-spikes).
 
 # Spikes spell 
 
