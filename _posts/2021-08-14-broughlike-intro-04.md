@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Broughlikes intro part 4 - The spikes
-date: 2021-08-13
+date: 2021-08-14 18:03 +0630
 topics: 
 - game-dev
 - dev-log
