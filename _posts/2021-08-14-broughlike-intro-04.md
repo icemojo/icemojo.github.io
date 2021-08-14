@@ -7,6 +7,8 @@ topics:
 - dev-log
 ---
 
+>This post should be referred (or) redirected from [my itch.io project page]().
+
 # Spikes spell 
 
 Ever since I've started thinking about spells system, I wanted to design something which would leave some sort of an object that persists in the game world. Maybe it could have some kind of a lifetime that would only last for a specific number of turns and be destroyed. Or something like a bomb that would explode after a certain number of turns countdown. But a bomb seems like a hybrid between the Nova and Leap landing splash damage, so I didn't do it. Bomb items that the player can hold separately would also makes sense, but the entire inventory system to hold those bombs could explode the scope tremendously. 
@@ -50,5 +52,22 @@ I think that's what makes them different from the Alien dudes. The Aliens hide b
 
 # Totem Head enemy
 
+Now, let's talk about the design of the very last enemy type. I'm calling it the Totem Head, because it looks like a totem... with a face. I was seriously planning about making it into some kind of a boss enemy. Only one spawned in a level, annoying special ability, backed up with maxed out 8 health points. That sort of thing. And then I thought, the difficulty curve between this guy and the other enemies would become quite high. So I went for something else that would make sense with its visual sprite. 
 
-# Other minor changes
+![Totem Head](/assets/img/broughlike-intro-04-totem-head.gif)
+<figcaption>Let's shake things up</figcaption>
+
+Yup, it stomps on the ground and deals splash damage when close to the player. Following the trend of the Spikes and the Tentacles projectile, the splash can hurt other enemies too if they get caught nearby. The idea is pretty simple. Totem Head is an enemy which is intimidating to look at with an intimidating attack, paired with a tough skin. But once you know your way around them, it's not really hard to deal with them. 
+
+That's basically what I aimed for when designing all the enemies in this game. They should be unique in their own way, and provide a bit of a learning experience when you first encounter them, but not super complicated to overcome. And remember, killing the enemies will grant you xp and new spells, but they're optional in order to progress into the dungeon. 
+
+# Conslusion 
+
+I'm quite satisfied with what I have so far. There are a couple of bug I'm totally ignoring to fix. They're quite annoying whenever they happen, but not annoying enough for me to dive into. Plus, I'm already over the one hundred hours mark I originally set at the start of the project a few months ago. So, I'm calling this done and move on to something else. 
+
+Is this the best I can do? No. Is this everything I can come up with? Absolutely not. I still have at least one solid design for a new enemy type in my backlog, but I'm not gonna do it anymore (at least in this game). To give you a bit of a hint, it involves some necromancy. 
+
+There are still a bunch of ideas running around in my head. But I'd rather explore them in a fresh new project instad of adding more dimensions to this game. This project was supposed to be my design workout, and also the entry point to the roguelike genre in general. And I'm pretty pleased with everything I've learned so far. I'm still gonna write a separate post about everything I *hate* about this game though, cause failures can be more valuable of a lesson sometimes. 
+
+The game is available on [my itch.io page](https://icemojo.itch.io/dungeon-brawler) for Windows. Go play it, critize about it. Do whatever you want, as long as you don't package it and sell it somewhere else. If you want a Mac or a Linux build, do reach me out by leaving a comment there. 
+
