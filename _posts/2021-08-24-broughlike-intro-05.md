@@ -14,30 +14,43 @@ I make my own art. It sort of stands out on its own, but it's no where close to 
 
 So, here goes.
 
-# 1) Simplicity of the spells 
+# 1) Simplicity of the spells -- Good
 
 This is possibly the best outcome I'd like to carry on to the other projects, even non-roguelike games. I feel like their effects are at least easier to observe without having to supply huge tooltip texts or whatever. One thing I would like to do (maybe the next time) is to have more interactions between multiple spells. I love the idea of curses in [Imbroglio](https://apps.apple.com/us/app/imbroglio/id969264934), and drawing inspiration from the traditional role-playin games, buffing and debuffing effects might be one way to do it. But is it the only way to do it; I don't really know. So many games have done it for years, it might be hard to break out of the norm. We'll see. 
 
 I did have an idea about equippable items that will act like modifiers to the unlocked spells. For instance, higher bonus damage from Cannibalize, more healing power from Heal, Nova will chain across multiple enemies, that sort of things. But I feel like that's a cheap design decision that AAA RPGs usually do with skill trees. You're just doing the same thing, but more. It'll probably make sense for games of bigger scale, but definitely not here. 
 
-The point is; complexity doesn't necessarily mean creativity. I've never properly understood those words before, but now I do. Often times when I thought of interesting ideas for spells (sometimes even got down to implement them), I usually revert back to a more simpler approach. People might find that they're *too* simple in some occasions when playing the game. But I do believe that those kinds of design lessons are far more valuable in the long run than the game itself. 
+The point is; complexity doesn't necessarily mean creativity. I've never properly understood those words before, after working professionally as a software developer for almost a decade. But now, I do. Often times when I thought of interesting ideas for spells, or even enemies, (sometimes even got down to implement them), I usually revert back to a more simpler approach. People might find that they're *too* simple in some occasions when playing the game. But I do believe that those kinds of lessons are far more valuable for me as a designer in the long run than the game itself. 
 
-# 2) Trivial scoring mechanism 
+# 2) Trivial scoring mechanism -- Bad
 
-I'm not sure how to explain this, other than the fact the final scoring system feels really... lazy. In other words, this is one of the bad things I don't really know how to fix. I mean, I could easily say that, the aim of the player is to dive as deep as possible, while collecting as much treasures as possible. But, you can question that, if the treasures/gems are so valuable, why do you have to spend them to cast the spells. 
+I'm not sure how to explain this, other than the fact the final scoring system feels really... lazy. In other words, this is one of the bad things I don't really know how to fix right now. I mean, I could easily say that, the aim of the player is to dive as deep as possible, while collecting as much treasures as possible. But, you can question it as, if the treasures/gems are so valuable, why do you have to spend them to cast the spells. 
 
 ![](\assets\img\broughlike-intro-05-score-screen.png)
 <figcaption>High score screen, double-serving as the main menu</figcaption>
 
-In short, the score system has really became an afterthought, instead of the main driving force to let the player come back to the game, at least thematically, or overarching plot, or something like that. But it wasn't. They were just arbitrary numbers saved onto the drive in order to get displayed on the menu. 
+In short, the score system has really became an afterthought, instead of the main driving force to let the player come back to the game, at least thematically, or overarching plot, or something like that. But it wasn't. They were just arbitrary numbers saved onto the drive in order to get displayed on the menu. Maybe I could add some sort of meta game, where the player can unlock a perk before the start of the run; initial health boost, a random spell unlock, etc. And the perks will gradually be available depending on the highest scores you can manage.
 
+I'll probably try it out later on. 
+
+# 3) Lack of polish -- Bad
+
+Even from glancing at the gameplay gifs, it's obvious that the game totally lacks the shininess you'd expect from a modern video game. I was constantly fooling myself with the reason that I was more focused on the design than actually making this game presentable or whatever. And there are also commercial games out there which don't have any kinds of polish at all. But the thing about those commercial games is, they have an extremely good design foundation. My game here doesn't. So, it's totally a lame excuse. 
+
+I should've, and could've, spent ten hours or so, adding simple particles and make some of the UI interactions better. 
+
+# 4) Very little control over the randomization -- Good and bad, mostly bad
+
+This is one of the things that you might start to notice after playing the game for a few runs, especially when it comes to generating the levels. The level layouts are simply just too eratic. Other than making sure that it doesn't spawn island tiles, (basically, a free passable tile that's surrounded by walls so that it becomes inaccessable by conventional means) the map generation code has no intelligence at all. Sometimes the enemies would spawn clustered around the player, sometimes the player will be spawned next to the exit stairway. 
+
+Another thing is a bit more in the technical side. The way I programmed the map generation code doesn't allow me to utilize seeds in order to re-generate the same series of levels altogether. The code is simple that it works for prototyping a single idea, but it's bad that there's very little control over it, thus doesn't leave any room for adding meaingful layers on top of map generation. 
+
+In other words, the levels are just generated in a pure random fashion, not procedurally. 
 
 
 ---
 Outline: 
 
-1. Lack of polish (more feedback effects and sounds, UI improvements)
-1. More control on the randomization -- quadrant system 
 1. Terrible handling of event queues 
 1. Engine capabilities and features, or abundance there of 
 
