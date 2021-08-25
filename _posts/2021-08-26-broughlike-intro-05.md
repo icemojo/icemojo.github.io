@@ -1,6 +1,6 @@
 ---
 title: Broughlikes intro part 5 - The retrospect 
-date: 2021-08-24
+date: 2021-08-26 02:23 +0630
 topics:
 - game-dev
 - dev-log
