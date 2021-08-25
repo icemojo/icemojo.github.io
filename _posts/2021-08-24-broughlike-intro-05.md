@@ -16,11 +16,11 @@ So, here goes.
 
 # 1) Simplicity of the spells -- Good
 
-This is possibly the best outcome I'd like to carry on to the other projects, even non-roguelike games. I feel like their effects are at least easier to observe without having to supply huge tooltip texts or whatever. One thing I would like to do (maybe the next time) is to have more interactions between multiple spells. I love the idea of curses in [Imbroglio](https://apps.apple.com/us/app/imbroglio/id969264934), and drawing inspiration from the traditional role-playin games, buffing and debuffing effects might be one way to do it. But is it the only way to do it; I don't really know. So many games have done it for years, it might be hard to break out of the norm. We'll see. 
+This is possibly the best outcome I'd like to carry on to the other projects, even non-roguelike games. I feel like their effects are at least easier to observe without having to supply huge tooltip texts or whatever. One thing I would like to do (maybe the next time) is to have more interactions between multiple spells. I love the idea of curses in [Imbroglio](https://apps.apple.com/us/app/imbroglio/id969264934), and drawing inspiration from the traditional role-playing games, buffing and debuffing effects might be one way to do it. But is it the only way to do it; I don't really know. So many games have done it for years, it might be hard to break out of the norm. We'll see. 
 
 I did have an idea about equippable items that will act like modifiers to the unlocked spells. For instance, higher bonus damage from Cannibalize, more healing power from Heal, Nova will chain across multiple enemies, that sort of things. But I feel like that's a cheap design decision that AAA RPGs usually do with skill trees. You're just doing the same thing, but more. It'll probably make sense for games of bigger scale, but definitely not here. 
 
-The point is; complexity doesn't necessarily mean creativity. I've never properly understood those words before, after working professionally as a software developer for almost a decade. But now, I do. Often times when I thought of interesting ideas for spells, or even enemies, (sometimes even got down to implement them), I usually revert back to a more simpler approach. People might find that they're *too* simple in some occasions when playing the game. But I do believe that those kinds of lessons are far more valuable for me as a designer in the long run than the game itself. 
+The point is; complexity doesn't necessarily mean creativity. I've never properly understood those words before, even after working professionally as a software developer for almost a decade. But now, I do. Often times when I thought of interesting ideas for spells, or even enemies, (sometimes even got down to implement them), I usually revert back to a more simpler approach. People might find that they're *too* simple in some occasions when playing the game. But I do believe that those kinds of lessons are far more valuable for me as a designer in the long run than the game itself. 
 
 # 2) Trivial scoring mechanism -- Bad
 
@@ -43,15 +43,27 @@ I should've, and could've, spent ten hours or so, adding simple particles and ma
 
 This is one of the things that you might start to notice after playing the game for a few runs, especially when it comes to generating the levels. The level layouts are simply just too eratic. Other than making sure that it doesn't spawn island tiles, (basically, a free passable tile that's surrounded by walls so that it becomes inaccessable by conventional means) the map generation code has no intelligence at all. Sometimes the enemies would spawn clustered around the player, sometimes the player will be spawned next to the exit stairway. 
 
-Another thing is a bit more in the technical side. The way I programmed the map generation code doesn't allow me to utilize seeds in order to re-generate the same series of levels altogether. The code is simple that it works for prototyping a single idea, but it's bad that there's very little control over it, thus doesn't leave any room for adding meaingful layers on top of map generation. 
+Another thing is a bit more on the technical side. The way I programmed the map generation code doesn't allow me to utilize seeds in order to re-generate the same series of levels altogether. The code is simple that it works for prototyping a single idea, but it's bad that there's very little control over it, thus doesn't leave any room for adding meaningful layers on top of map generation. 
 
-In other words, the levels are just generated in a pure random fashion, not procedurally. 
+In other words, the levels are just generated in a pure random fashion, not procedurally. If I have to pick at least one thing to improve the map generation in the game, I might say the spawning locations for the player, the enemies and the exit should be spread out across the level more organically, so that the player would at least have a better reason to spend more time in a level. 
+
+# 5) Terrible handling of event queues 
+
+This is also another technical aspects that I wasn't really satisfied with. I'm not really sure the *event queue* is the right term for referring to this. Basically what I mean by that is, in a typical turn-based games (be it roguelike or whatever) you'll have sequence of events that happen every turn. Player inputs will be accepted, enemies will take their actions, passive buffs and debuffs on the actors will take effect, timers and cooldowns will be ticked down, et cetra, et cetra. All of these have to happen in a nice liner fashion, and *more importantly*, in a predictable and sensible way within the game world. 
+
+Let's use a simple example from our game itself; the Spikes spell. The player casts the spell to lay the spiky trap on the floor, the trap activates and deactivates every other turn. When an enemy or the player walks onto the tile with the trap when it activates, they need to get hurt. Such a simple concept so the implementation should be pretty straightforward, right? The turn advances when the player takes action. So, you might be thinking, when the player did something, the spike should change its state so that an enemy walking onto the tile with the spike can get hurt. Well, yes, you're thinking it right. But remember, the player can *also* get hurt when walking onto the spikes too. Soooooo.... if the world advances only when the player moves, when should the state of the spikes be changed, so that the player can get hurt when they're walking onto the spikes that were deactivated in the previous turn. 
+
+<p style="text-align:center;">
+<img src="/assets/img/broughlike-intro-04-the-spikes.gif" alt="spikes" style="width:70%;">
+<figcaption>Be weary of your own traps</figcaption>
+</p>
+
+I hope you're starting to see my point here. Even a simple interaction like this can get pretty weird when you actually start to dig deeper into the problem. And I haven't even touched the subject of syncing the animations with those entity states. The way I solved the problem in the game was... ok. Just about ok. I mean, it works, but it was a pain in the butt to understand what's happening what and where. Strangly, I haven't really seen this problem addressed properly even in tutorials that focus on roguelikes. I do have an idea about a proper system in mind that I'd like to implement in the next project. So, I'll probably write more about it when I get there. 
 
 
 ---
 Outline: 
 
-1. Terrible handling of event queues 
 1. Engine capabilities and features, or abundance there of 
 
 
